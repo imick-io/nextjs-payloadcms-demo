@@ -15,6 +15,10 @@ const dirname = path.dirname(filename)
 export default buildConfig({
   admin: {
     user: Users.slug,
+    autoLogin: {
+      email: process.env.AUTO_LOGIN_EMAIL || '',
+      password: process.env.AUTO_LOGIN_PASSWORD || '',
+    },
   },
   collections: [Users, Media],
   editor: lexicalEditor(),
